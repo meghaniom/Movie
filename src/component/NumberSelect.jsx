@@ -7,7 +7,6 @@ const NumberSelector = ({
   onSelect,
   onDeleteTicket,
   selectedNumbers = [],
-  // availableNumbers = [], 
   disabledNumbers = [],
   movieId
 }) => {
@@ -18,9 +17,11 @@ const NumberSelector = ({
     if (show) {
       setTempSelected(selectedNumbers);
     }
+    
   }, [show, selectedNumbers, movieId]);
 
   const handleNumberClick = (number) => {
+    tempSelected?.includes(number)&&setSelectedSeatsToDelete([...selectedSeatsToDelete, number]);
     // Prevent selection of disabled numbers
     if (disabledNumbers.includes(number)) return;
 
@@ -37,6 +38,9 @@ const NumberSelector = ({
     onHide();
   };
   const handelDelete = () => {
+    console.log(selectedSeatsToDelete,"selectedSeatsToDelete");
+    console.log(tempSelected,"tempSelected");
+    
     if (selectedSeatsToDelete.length > 0) {
       onDeleteTicket(movieId, selectedSeatsToDelete);
       onHide();
@@ -107,11 +111,12 @@ const NumberSelector = ({
         <Button variant="primary" onClick={handleConfirm}>
           Confirm
         </Button>
-        <Button variant="danger" onClick={handelDelete}
+     <Button variant="danger" onClick={handelDelete}
           style={{
-            backgroundColor: Array.isArray(selectedSeatsToDelete) && selectedSeatsToDelete?.length > 0 ? '#e9ecef' : '',
-            color: Array.isArray(selectedSeatsToDelete) && selectedSeatsToDelete.length > 0 ? "#000" : "",
-            border: "1px solid gray"
+          backgroundColor: selectedSeatsToDelete.length > 0 ? '#dc3545' : '#f8f9fa',
+    color: selectedSeatsToDelete.length > 0 ? 'white' : 'gray',
+    border: '1px solid gray',
+    cursor: selectedSeatsToDelete.length > 0 ? 'pointer' : 'not-allowed'
           }}>
           Delete
         </Button>

@@ -83,27 +83,28 @@ useEffect(()=> {
   };
 
  const handelDeleteTicket = (movieId, numberToDelete) => {
-  const userSelected = selectedNumbers[movieId] || [];
-  const numbersToRemove = Array.isArray(numberToDelete)
-    ? numberToDelete
+ 
+
+  // Convert to array if it's not already
+  const numbersToRemove = Array.isArray(numberToDelete) 
+    ? numberToDelete 
     : [numberToDelete];
 
- 
-  const newSelected = userSelected.filter(num => !numbersToRemove.includes(num));
-console.log(newSelected);
+  console.log(numbersToRemove);
   
-
+  const userSelected = selectedNumbers[movieId] || [];
+  const newSelected = userSelected.filter(num => !numbersToRemove.includes(num));
   
   const updatedSelected = { ...selectedNumbers, [movieId]: newSelected };
-  console.log(updatedSelected);
   const updatedConfirmed = { ...confirmedTickets };
 
+  // Remove movie entry if no selections left
   if (newSelected.length === 0) {
     delete updatedSelected[movieId];
     delete updatedConfirmed[movieId];
   }
 
-  
+  // Update disabled numbers
   const globalDisabled = JSON.parse(localStorage.getItem("disabledNumbers")) || {};
   const updatedGlobalDisabled = {
     ...globalDisabled,
@@ -112,13 +113,12 @@ console.log(newSelected);
     ),
   };
 
- console.log(globalDisabled);
- 
+  // Update state
   setSelectedNumbers(updatedSelected);
   setConfirmedTickets(updatedConfirmed);
-  setDisabledNumbers(updatedGlobalDisabled); 
+  setDisabledNumbers(updatedGlobalDisabled);
 
-  
+  // Update localStorage for current user
   const newAllSelected = {
     ...allSelectedNumbers,
     [currentUser]: updatedSelected,
@@ -128,7 +128,6 @@ console.log(newSelected);
     [currentUser]: updatedConfirmed,
   };
 
-  
   localStorage.setItem("selectedNumbers", JSON.stringify(newAllSelected));
   localStorage.setItem("confirmedTickets", JSON.stringify(newAllConfirmed));
   localStorage.setItem("disabledNumbers", JSON.stringify(updatedGlobalDisabled));
