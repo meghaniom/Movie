@@ -56,7 +56,6 @@ const PlayingTex = () => {
       alert(`Tickets confirmed for ${currentMovie.name || 'the movie'}: ${numbers.join(", ")}`);
     }
   };
-
   const computeDisabledNumbers = (allDisabled, allSelected, user) => {
   const filtered = {};
   for (const movieId in allDisabled) {
@@ -68,7 +67,6 @@ const PlayingTex = () => {
   }
   return filtered;
 };
-
 useEffect(()=> {
   const filtered = computeDisabledNumbers(allDisabledNumbers, allSelectedNumbers, currentUser);
   setDisabledNumbers(filtered);
@@ -81,9 +79,7 @@ useEffect(()=> {
       alert('Please select ticket numbers first by clicking "Add Tickets"');
     }
   };
-
  const handelDeleteTicket = (movieId, numberToDelete) => {
- 
 
   // Convert to array if it's not already
   const numbersToRemove = Array.isArray(numberToDelete) 
