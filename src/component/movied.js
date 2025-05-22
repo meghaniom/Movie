@@ -1,4 +1,4 @@
- const Demo =[
+const Demo = [
   {
     "id": 1,
     "title": "The Bold and the Beautiful",
@@ -119,7 +119,85 @@
     "description": "1997",
     "image": "https://images.plex.tv/photo?size=medium-360&scale=1&url=https%3A%2F%2Fimage.tmdb.org%2Ft%2Fp%2Foriginal%2FkiGR3pUUev5oxynmXNVzvGnm8Te.jpg"
   },
- 
+  {
+    "id": 21,
+    "title": "Andor",
+    "description": "2021",
+    "image": "https://m.media-amazon.com/images/M/MV5BNGI2MTJjMjUtMTJhOC00YTY2LTg1NjUtMTdmMjg4YTk2YjM5XkEyXkFqcGc@._V1_QL75_UX140_CR0,0,140,207_.jpg"
+  },
+  {
+    "id": 22,
+    "title": "Raid2",
+    "description": "2002",
+    "image": "https://m.media-amazon.com/images/M/MV5BNjQyOTRiYTQtNzU0MS00ZGM2LWE4MTktODI5ZjZiN2NkYjYyXkEyXkFqcGc@._V1_QL75_UY414_CR4,0,280,414_.jpg"
+  },
+  {
+    "id": 23,
+    "title": "Raid2",
+    "description": "2002",
+    "image": "https://m.media-amazon.com/images/M/MV5BNjQyOTRiYTQtNzU0MS00ZGM2LWE4MTktODI5ZjZiN2NkYjYyXkEyXkFqcGc@._V1_QL75_UY414_CR4,0,280,414_.jpg"
+  },
+  {
+    "id": 24,
+    "title": "Raid2",
+    "description": "2002",
+    "image": "https://m.media-amazon.com/images/M/MV5BNjQyOTRiYTQtNzU0MS00ZGM2LWE4MTktODI5ZjZiN2NkYjYyXkEyXkFqcGc@._V1_QL75_UY414_CR4,0,280,414_.jpg"
+  },
+  {
+    "id": 25,
+    "title": "Raid2",
+    "description": "2002",
+    "image": "https://m.media-amazon.com/images/M/MV5BNjQyOTRiYTQtNzU0MS00ZGM2LWE4MTktODI5ZjZiN2NkYjYyXkEyXkFqcGc@._V1_QL75_UY414_CR4,0,280,414_.jpg"
+  },
+  {
+    "id": 26,
+    "title": "Raid2",
+    "description": "2002",
+    "image": "https://m.media-amazon.com/images/M/MV5BNjQyOTRiYTQtNzU0MS00ZGM2LWE4MTktODI5ZjZiN2NkYjYyXkEyXkFqcGc@._V1_QL75_UY414_CR4,0,280,414_.jpg"
+  },
+  {
+    "id": 27,
+    "title": "Raid2",
+    "description": "2002",
+    "image": "https://m.media-amazon.com/images/M/MV5BNjQyOTRiYTQtNzU0MS00ZGM2LWE4MTktODI5ZjZiN2NkYjYyXkEyXkFqcGc@._V1_QL75_UY414_CR4,0,280,414_.jpg"
+  },
+  {
+    "id": 28,
+    "title": "Raid2",
+    "description": "2002",
+    "image": "https://m.media-amazon.com/images/M/MV5BNjQyOTRiYTQtNzU0MS00ZGM2LWE4MTktODI5ZjZiN2NkYjYyXkEyXkFqcGc@._V1_QL75_UY414_CR4,0,280,414_.jpg"
+  },
+  {
+    "id": 29,
+    "title": "Raid2",
+    "description": "2002",
+    "image": "https://m.media-amazon.com/images/M/MV5BNjQyOTRiYTQtNzU0MS00ZGM2LWE4MTktODI5ZjZiN2NkYjYyXkEyXkFqcGc@._V1_QL75_UY414_CR4,0,280,414_.jpg"
+  },
+  {
+    "id": 30,
+    "title": "Raid2",
+    "description": "2002",
+    "image": "https://m.media-amazon.com/images/M/MV5BNjQyOTRiYTQtNzU0MS00ZGM2LWE4MTktODI5ZjZiN2NkYjYyXkEyXkFqcGc@._V1_QL75_UY414_CR4,0,280,414_.jpg"
+  },
+  {
+    "id": 31,
+    "title": "Raid2",
+    "description": "2002",
+    "image": "https://m.media-amazon.com/images/M/MV5BNjQyOTRiYTQtNzU0MS00ZGM2LWE4MTktODI5ZjZiN2NkYjYyXkEyXkFqcGc@._V1_QL75_UY414_CR4,0,280,414_.jpg"
+  }
+  , {
+    "id": 32,
+    "title": "Raid2",
+    "description": "2002",
+    "image": "https://m.media-amazon.com/images/M/MV5BNjQyOTRiYTQtNzU0MS00ZGM2LWE4MTktODI5ZjZiN2NkYjYyXkEyXkFqcGc@._V1_QL75_UY414_CR4,0,280,414_.jpg"
+  },
+  {
+    "id": 33,
+    "title": "Raid2",
+    "description": "2002",
+    "image": "https://m.media-amazon.com/images/M/MV5BNjQyOTRiYTQtNzU0MS00ZGM2LWE4MTktODI5ZjZiN2NkYjYyXkEyXkFqcGc@._V1_QL75_UY414_CR4,0,280,414_.jpg"
+  }
+
 ]
 
 

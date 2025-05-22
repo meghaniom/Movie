@@ -4,6 +4,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 // import NavDropdown from 'react-bootstrap/NavDropdown';
 import { useNavigate } from 'react-router-dom';
+import logout from '../assets/image/logout.png'
 
 
 const Header = () => {
@@ -31,7 +32,13 @@ const Header = () => {
 
                         </Nav>
                         <Nav className="me-auto">
-                         <button style={{width: "100px", backgroundColor:"gray", border: "none", padding: "10px 10px"}} onClick={handelLogout}>Signup</button>          
+
+                            <img src={logout}  style={{width: "27px",height:"27px"}}alt=""  onClick={handelLogout}/>
+                            <span style={{paddingLeft:"10px"}}>
+
+                            Logout
+                            </span>
+                         {/* <button style={{width: "100px", backgroundColor:"gray", border: "none", padding: "10px 10px"}} onClick={handelLogout}>Signup</button>           */}
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
