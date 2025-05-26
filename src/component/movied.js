@@ -196,9 +196,9 @@
   },
   {
     id : 3,
-    image : "https://media.istockphoto.com/id/1284690051/vector/ten-minutes-on-analog-clock-face-flat-style-design-vector-illustration-icon-sign-isolated-on.jpg?s=612x612&w=0&k=20&c=X6nJqMssAhu7q-bLUjpId7PFhmJsDVZ0vdQwiy8hGAY=",
-    title : "Always 100% Free",
-    description:"Welcome to instant gratification at its best. Watch now without any payment or subscription and end the search for free movie websites."
+    image: "https://t3.ftcdn.net/jpg/05/54/39/00/240_F_554390052_5ZTwMIHwD6VDuW8rFPDmDvKEIM5G3LUC.jpg"    ,
+   title : "Always 100% Free",
+    description:"Welcome to instant gratification at its best. Watch now without any payment or subscription and end the "
   },
   {
     id:4,

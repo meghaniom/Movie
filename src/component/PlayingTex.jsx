@@ -19,6 +19,8 @@ const PlayingTex = () => {
   const [disabledNumbers, setDisabledNumbers] = useState(() => allDisabledNumbers || {});
 
   const [selectedMovieId, setSelectedMovieId] = useState(null);
+
+  const [resetTicket, setResetTicket] = useState(false);
   const [modalShow, setModalShow] = useState(false);
 
 
@@ -93,9 +95,6 @@ const PlayingTex = () => {
     }
   };
 
-
-
-
   const handelDeleteTicket = (movieId, numberToDelete) => {
 
     // Convert to array if it's not already
@@ -146,6 +145,45 @@ const PlayingTex = () => {
     localStorage.setItem("disabledNumbers", JSON.stringify(updatedGlobalDisabled));
   };
 
+
+//    const handleReset = (movieId, numbersToReset) => {
+//   if (!movieId || !numbersToReset || numbersToReset.length === 0) return;
+
+//   // Update disabled numbers by removing these numbers
+//   const updatedDisabled = {
+//     ...disabledNumbers,
+//     [movieId]: (disabledNumbers[movieId] || []).filter(
+//       num => !numbersToReset.includes(num)
+//   )};
+
+//   // Update selected numbers by removing these numbers
+//   const updatedSelected = {
+//     ...selectedNumbers,
+//     [movieId]: (selectedNumbers[movieId] || []).filter(
+//       num => !numbersToReset.includes(num))
+//   };
+
+//   // Update state
+//   setDisabledNumbers(updatedDisabled);
+//   setSelectedNumbers(updatedSelected);
+
+//   // Update localStorage
+//   const newAllDisabled = {
+//     ...JSON.parse(localStorage.getItem("disabledNumbers") || "{}"),
+//     [movieId]: updatedDisabled[movieId]
+//   };
+  
+//   const newAllSelected = {
+//     ...JSON.parse(localStorage.getItem("selectedNumbers") || "{}"),
+//     [currentUser]: updatedSelected
+//   };
+
+//   localStorage.setItem("disabledNumbers", JSON.stringify(newAllDisabled));
+//   localStorage.setItem("selectedNumbers", JSON.stringify(newAllSelected));
+
+//   alert(`${numbersToReset.length} tickets have been reset and are now available!`);
+// };
+
   const getAvailableNumbers = () => {
     return Array.from({ length: 60 }, (_, i) => i + 1);
   };
@@ -163,6 +201,7 @@ const PlayingTex = () => {
           WebkitBackgroundClip: "text",
           WebkitTextFillColor: "transparent",
           animation: "gradientMove 5s ease infinite",
+          marginTop: "10px"
         }}>The  New Movie List</h2>
       <div className='movie-master'>
         {Demo.map((movie) => {
@@ -199,6 +238,7 @@ const PlayingTex = () => {
           onHide={() => setShowSelector(false)}
           onSelect={handleNumberSelect}
           onDeleteTicket={handelDeleteTicket}
+          // onReset = {handleReset}
           selectedNumbers={currentMovie ? selectedNumbers[currentMovie.id] || [] : []}
           availableNumbers={getAvailableNumbers()}
           disabledNumbers={currentMovie ? disabledNumbers[currentMovie.id] || [] : []}

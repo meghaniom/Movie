@@ -37,27 +37,33 @@ const Content = () => {
             </section>
 
 
-            <section className='grid-x dynamic-block grid-block'>
-                <div className='large-12 cell grid-elements'>
-                    <div style={{ maxWidth: "1200px", margin: "0 auto" }} className="grid-x grid-padding-x align-center grid-standard small-up-1 medium-up-4 large-up-4">
-                        {
-                            Movie?.map((item, index) => (
-                                <div className="cell" key={index}>
-                                    <div className="grid-inner">
-                                        <div className="plex-svg-holder">
-                                            <img src={item.image} alt={item.title} />
-                                        </div>
-                                        <div className="gird-content">
-                                            <h4>{item.title}</h4>
-                                            <p>{item.description}</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            ))}
-                    </div>
-                </div>
+      <section className='grid-x dynamic-block grid-block'>
+  <div className='large-12 cell grid-elements'>
+    <div
+      style={{ maxWidth: "1200px", margin: "0 auto" }}
+      className="grid-x grid-padding-x align-center grid-standard small-up-1 medium-up-2 large-up-4"
+    >
+      {Movie?.map((item, index) => (
+        <div className="cell" key={index}>
+          <div className="grid-inner" style={{ padding: "1rem", boxShadow: "0 0 10px rgba(0,0,0,0.1)", borderRadius: "10px", background: "#fff", height: "100%" }}>
+            <div className="plex-svg-holder" style={{ textAlign: "center", marginBottom: "1rem" }}>
+              <img
+                src={item.image}
+                alt={item.title}
+                style={{ width: "100%", height: "250px", borderRadius: "8px" }}
+              />
+            </div>
+            <div className="grid-content" style={{ textAlign: "center" }}>
+              <h4 style={{ margin: "0.5rem 0" }}>{item.title}</h4>
+              <p style={{ fontSize: "0.9rem", color: "#666" }}>{item.description}</p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
 
-            </section>
             <section className='banner-te'>
                 <div className="left-ban">
                     <div className="box-ban" style={{ padding: "80px" }}>
