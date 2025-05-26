@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import '../App.css'
 import { Button } from 'react-bootstrap';
+import { Movie } from './movied';
+// import  Movie  from './movied';
+
 const Content = () => {
     const [show, setShow] = useState();
 
@@ -17,6 +20,9 @@ const Content = () => {
     }, [])
     console.log(show?.data, "show");
     return <>
+
+
+
         <div className="first-com">
             <section className='movie-banner'>
                 <div className="banner-text">
@@ -28,6 +34,29 @@ const Content = () => {
 
                     <Button variant="warning" className='bynn'>Warning</Button>
                 </div>
+            </section>
+
+
+            <section className='grid-x dynamic-block grid-block'>
+                <div className='large-12 cell grid-elements'>
+                    <div style={{ maxWidth: "1200px", margin: "0 auto" }} className="grid-x grid-padding-x align-center grid-standard small-up-1 medium-up-4 large-up-4">
+                        {
+                            Movie?.map((item, index) => (
+                                <div className="cell" key={index}>
+                                    <div className="grid-inner">
+                                        <div className="plex-svg-holder">
+                                            <img src={item.image} alt={item.title} />
+                                        </div>
+                                        <div className="gird-content">
+                                            <h4>{item.title}</h4>
+                                            <p>{item.description}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            ))}
+                    </div>
+                </div>
+
             </section>
             <section className='banner-te'>
                 <div className="left-ban">
@@ -51,24 +80,24 @@ const Content = () => {
                 </div>
             </section>
 
-            <section style={{backgroundColor: "#F9F9F9", width: "100%", display: "flex"}}>
-                <div className='imagendn' style={{width: "50%", padding:"80px" ,display: "flex", justifyContent: "center", alignItems: "center"}}>
-                    <div className="ujjkbk" style={{display: "flex", alignItems:"center"}}>
-                        <div className="imbbdgdg" style={{maxWidth: "500px",margin: "0 auto"}}>
-                            <img src="https://www.plex.tv/wp-content/uploads/2025/03/watch-free-mobile.png" style={{maxWidth: "100%", verticalAlign:"bottom"}} alt="" />
+            <section style={{ backgroundColor: "#F9F9F9", width: "100%", display: "flex" }}>
+                <div className='imagendn' style={{ width: "50%", padding: "80px", display: "flex", justifyContent: "center", alignItems: "center" }}>
+                    <div className="ujjkbk" style={{ display: "flex", alignItems: "center" }}>
+                        <div className="imbbdgdg" style={{ maxWidth: "500px", margin: "0 auto" }}>
+                            <img src="https://www.plex.tv/wp-content/uploads/2025/03/watch-free-mobile.png" style={{ maxWidth: "100%", verticalAlign: "bottom" }} alt="" />
                         </div>
                     </div>
                 </div>
-                <div className="bdwjbdk" style={{width: "50%", padding:"80px", display: "flex", justifyContent: "center", alignItems: "center"}}>
+                <div className="bdwjbdk" style={{ width: "50%", padding: "80px", display: "flex", justifyContent: "center", alignItems: "center" }}>
                     <div className="textright">
-                        <h2 style={{fontSize: "2.5em",letterSpacing: " -1px", color: "#282A2D", lineHeight: " 1.2em"}}>It has never been easier to watch free movies online.</h2>
-                        <p style={{lineHeight: "1.5em", paddingTop: "25px"}}>
+                        <h2 style={{ fontSize: "2.5em", letterSpacing: " -1px", color: "#282A2D", lineHeight: " 1.2em" }}>It has never been easier to watch free movies online.</h2>
+                        <p style={{ lineHeight: "1.5em", paddingTop: "25px" }}>
                             Once you register for a free account with Plex, we’ll keep your place from screen to screen as long as you’re signed in. No matter what device you choose, your free movies will pick up where you left off with ease.
                         </p>
-                        <a href="#" className='buttono ' style={{fontSize:"20px"}}>Watch Free</a>
+                        <a href="#" className='buttono ' style={{ fontSize: "20px" }}>Watch Free</a>
                     </div>
                 </div>
-                
+
             </section>
 
         </div>

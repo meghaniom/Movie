@@ -1,4 +1,4 @@
-const Demo = [
+ export const Demo = [
   {
     "id": 1,
     "title": "The Bold and the Beautiful",
@@ -127,78 +127,86 @@ const Demo = [
   },
   {
     "id": 22,
-    "title": "Raid2",
-    "description": "2002",
+    "title": "Raid2 ",
+    "description": "1926",
     "image": "https://m.media-amazon.com/images/M/MV5BNjQyOTRiYTQtNzU0MS00ZGM2LWE4MTktODI5ZjZiN2NkYjYyXkEyXkFqcGc@._V1_QL75_UY414_CR4,0,280,414_.jpg"
   },
   {
     "id": 23,
-    "title": "Raid2",
+    "title": "Dog Soldiers",
     "description": "2002",
-    "image": "https://m.media-amazon.com/images/M/MV5BNjQyOTRiYTQtNzU0MS00ZGM2LWE4MTktODI5ZjZiN2NkYjYyXkEyXkFqcGc@._V1_QL75_UY414_CR4,0,280,414_.jpg"
+    "image": "https://images.plex.tv/photo?size=medium-360&scale=1&url=https%3A%2F%2Fmetadata-static.plex.tv%2F0%2Fgracenote%2F0c817fd21404c5b9af8f2972c1b4d42a.jpg"
   },
   {
     "id": 24,
-    "title": "Raid2",
-    "description": "2002",
-    "image": "https://m.media-amazon.com/images/M/MV5BNjQyOTRiYTQtNzU0MS00ZGM2LWE4MTktODI5ZjZiN2NkYjYyXkEyXkFqcGc@._V1_QL75_UY414_CR4,0,280,414_.jpg"
+    "title": "The 2nd",
+    "description": "2022",
+    "image": "https://images.plex.tv/photo?size=medium-360&scale=1&url=https%3A%2F%2Fmetadata-static.plex.tv%2F1%2Fgracenote%2F10eb20cd0bfcda12f49ab566852ac900.jpg"
   },
   {
     "id": 25,
-    "title": "Raid2",
-    "description": "2002",
-    "image": "https://m.media-amazon.com/images/M/MV5BNjQyOTRiYTQtNzU0MS00ZGM2LWE4MTktODI5ZjZiN2NkYjYyXkEyXkFqcGc@._V1_QL75_UY414_CR4,0,280,414_.jpg"
+    "title": "Farscape2",
+    "description": "2022",
+    "image": "https://images.plex.tv/photo?size=medium-360&scale=1&url=https%3A%2F%2Fimage.tmdb.org%2Ft%2Fp%2Foriginal%2FnaH3ERI9NSjnNTptZwhVo5uRw9K.jpg"
   },
   {
     "id": 26,
-    "title": "Raid2",
-    "description": "2002",
-    "image": "https://m.media-amazon.com/images/M/MV5BNjQyOTRiYTQtNzU0MS00ZGM2LWE4MTktODI5ZjZiN2NkYjYyXkEyXkFqcGc@._V1_QL75_UY414_CR4,0,280,414_.jpg"
+    "title": "Halo 4: Forward Unto Dawn",
+    "description": "2017",
+    "image": "https://images.plex.tv/photo?size=medium-360&scale=1&url=https%3A%2F%2Fmetadata-static.plex.tv%2Fb%2Fgracenote%2Fbd8c36d482649d56881404b1699cfb7b.jpg"
   },
   {
     "id": 27,
-    "title": "Raid2",
-    "description": "2002",
-    "image": "https://m.media-amazon.com/images/M/MV5BNjQyOTRiYTQtNzU0MS00ZGM2LWE4MTktODI5ZjZiN2NkYjYyXkEyXkFqcGc@._V1_QL75_UY414_CR4,0,280,414_.jpg"
+    "title": "Tai-Chi Master2",
+    "description": "2017",
+    "image": "https://images.plex.tv/photo?size=medium-360&scale=1&url=https%3A%2F%2Fmetadata-static.plex.tv%2Fd%2Fgracenote%2Fd7b42120bb186460f1be2d951cb56c0a.jpg"
   },
   {
     "id": 28,
-    "title": "Raid2",
-    "description": "2002",
-    "image": "https://m.media-amazon.com/images/M/MV5BNjQyOTRiYTQtNzU0MS00ZGM2LWE4MTktODI5ZjZiN2NkYjYyXkEyXkFqcGc@._V1_QL75_UY414_CR4,0,280,414_.jpg"
+    "title": "The Legend of Fong Sai Yuk",
+    "description": "2025",
+    "image": "https://images.plex.tv/photo?size=medium-360&scale=1&url=https%3A%2F%2Fimage.tmdb.org%2Ft%2Fp%2Foriginal%2FpFqTVNWseJbikSGXEbIKk5ninbo.jpg"
   },
   {
     "id": 29,
-    "title": "Raid2",
-    "description": "2002",
-    "image": "https://m.media-amazon.com/images/M/MV5BNjQyOTRiYTQtNzU0MS00ZGM2LWE4MTktODI5ZjZiN2NkYjYyXkEyXkFqcGc@._V1_QL75_UY414_CR4,0,280,414_.jpg"
+    "title": "Halo Legends",
+    "description": "2023",
+    "image": "https://images.plex.tv/photo?size=medium-360&scale=1&url=https%3A%2F%2Fmetadata-static.plex.tv%2Fb%2Fgracenote%2Fbef04eb5207fd771838a79637b89f951.jpg"
   },
   {
     "id": 30,
-    "title": "Raid2",
-    "description": "2002",
-    "image": "https://m.media-amazon.com/images/M/MV5BNjQyOTRiYTQtNzU0MS00ZGM2LWE4MTktODI5ZjZiN2NkYjYyXkEyXkFqcGc@._V1_QL75_UY414_CR4,0,280,414_.jpg"
+    "title": "The Legend II",
+    "description": "1996",
+    "image": "https://images.plex.tv/photo?size=medium-360&scale=1&url=https%3A%2F%2Fmetadata-static.plex.tv%2Fc%2Fgracenote%2Fc97fdf8d86ee46990661b986ae23d7f7.jpg"
+  },
+
+ ]
+ export const   Movie = [
+  {
+    id: 1,
+    image : "https://media.istockphoto.com/id/172222439/photo/asia-view.jpg?s=612x612&w=0&k=20&c=DZrMBJOnFOMXjJn6SD9BtCcP2mJcjUCX8IDzRSsnTK0=",
+    title : "Works Worldwide",
+    description: "No other free streaming service delivers more content to and from more countries worldwide."
   },
   {
-    "id": 31,
-    "title": "Raid2",
-    "description": "2002",
-    "image": "https://m.media-amazon.com/images/M/MV5BNjQyOTRiYTQtNzU0MS00ZGM2LWE4MTktODI5ZjZiN2NkYjYyXkEyXkFqcGc@._V1_QL75_UY414_CR4,0,280,414_.jpg"
-  }
-  , {
-    "id": 32,
-    "title": "Raid2",
-    "description": "2002",
-    "image": "https://m.media-amazon.com/images/M/MV5BNjQyOTRiYTQtNzU0MS00ZGM2LWE4MTktODI5ZjZiN2NkYjYyXkEyXkFqcGc@._V1_QL75_UY414_CR4,0,280,414_.jpg"
+    id: 2,
+    image : "https://media.istockphoto.com/id/1145922111/vector/logotype-template-with-letter-t-vector-round-illustration-in-red-and-yellow-orange-isolated.jpg?s=612x612&w=0&k=20&c=yET72jF7PwPC4MR-g1b3Ijl7IvQP-ao4KDVi-3-l8PM=",
+    title : "Thousands of Titles",
+    description: "Choose from movies, shows, sports and music documentaries, AMC series, Live TV and more."
   },
   {
-    "id": 33,
-    "title": "Raid2",
-    "description": "2002",
-    "image": "https://m.media-amazon.com/images/M/MV5BNjQyOTRiYTQtNzU0MS00ZGM2LWE4MTktODI5ZjZiN2NkYjYyXkEyXkFqcGc@._V1_QL75_UY414_CR4,0,280,414_.jpg"
+    id : 3,
+    image : "https://media.istockphoto.com/id/1284690051/vector/ten-minutes-on-analog-clock-face-flat-style-design-vector-illustration-icon-sign-isolated-on.jpg?s=612x612&w=0&k=20&c=X6nJqMssAhu7q-bLUjpId7PFhmJsDVZ0vdQwiy8hGAY=",
+    title : "Always 100% Free",
+    description:"Welcome to instant gratification at its best. Watch now without any payment or subscription and end the search for free movie websites."
+  },
+  {
+    id:4,
+    image: "https://media.istockphoto.com/id/2209519452/vector/cross-platform-icon.jpg?s=612x612&w=0&k=20&c=G8E85Gq8K0o11wiv7Gg723dlM8frwwKDgsQT2HiZzhc=",
+    title : "Device-Friendly",
+    description:"Stream the good stuff from your favorite devices including Apple, Android, Smart TVs and more."
   }
+ ]
 
-]
 
 
-export default Demo;

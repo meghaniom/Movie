@@ -22,7 +22,7 @@ const NumberSelector = ({
 
   const handleNumberClick = (number) => {
     tempSelected?.includes(number)&&setSelectedSeatsToDelete([...selectedSeatsToDelete, number]);
-    // Prevent selection of disabled numbers
+    // Prevent selection of disabled numbers 
     if (disabledNumbers.includes(number)) return;
 
     // Toggle selection
