@@ -11,3 +11,7 @@
     background-position: 0% 50%;
   }
 }
+
+.custom-modal-width {
+  max-width: 900px !important; /* or 1000px for extra width */
+}

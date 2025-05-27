@@ -3,7 +3,9 @@
     "id": 1,
     "title": "The Bold and the Beautiful",
     "description": "1987",
-    "image": "https://images.plex.tv/photo?size=medium-360&scale=1&url=https%3A%2F%2Fmetadata-static.plex.tv%2F0%2Fplex%2F043e4024-8dc8-48d1-9f64-6f4ff3b99eaa.jpg"
+    "image": "https://images.plex.tv/photo?size=medium-360&scale=1&url=https%3A%2F%2Fmetadata-static.plex.tv%2F0%2Fplex%2F043e4024-8dc8-48d1-9f64-6f4ff3b99eaa.jpg",
+    "   ": "USA",
+    "date": "2023-10-01",
   },
   {
     "id": 2,
