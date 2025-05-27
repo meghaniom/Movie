@@ -130,7 +130,7 @@ const PlayingTex = () => {
     setConfirmedTickets(updatedConfirmed);
     setDisabledNumbers(updatedGlobalDisabled);
 
-    // Update localStorage for current user
+    
     const newAllSelected = {
       ...allSelectedNumbers,
       [currentUser]: updatedSelected,
@@ -144,46 +144,6 @@ const PlayingTex = () => {
     localStorage.setItem("confirmedTickets", JSON.stringify(newAllConfirmed));
     localStorage.setItem("disabledNumbers", JSON.stringify(updatedGlobalDisabled));
   };
-
-
-  //    const handleReset = (movieId, numbersToReset) => {
-  //   if (!movieId || !numbersToReset || numbersToReset.length === 0) return;
-
-  //   // Update disabled numbers by removing these numbers
-  //   const updatedDisabled = {
-  //     ...disabledNumbers,
-  //     [movieId]: (disabledNumbers[movieId] || []).filter(
-  //       num => !numbersToReset.includes(num)
-  //   )};
-
-  //   // Update selected numbers by removing these numbers
-  //   const updatedSelected = {
-  //     ...selectedNumbers,
-  //     [movieId]: (selectedNumbers[movieId] || []).filter(
-  //       num => !numbersToReset.includes(num))
-  //   };
-
-  //   // Update state
-  //   setDisabledNumbers(updatedDisabled);
-  //   setSelectedNumbers(updatedSelected);
-
-  //   // Update localStorage
-  //   const newAllDisabled = {
-  //     ...JSON.parse(localStorage.getItem("disabledNumbers") || "{}"),
-  //     [movieId]: updatedDisabled[movieId]
-  //   };
-
-  //   const newAllSelected = {
-  //     ...JSON.parse(localStorage.getItem("selectedNumbers") || "{}"),
-  //     [currentUser]: updatedSelected
-  //   };
-
-  //   localStorage.setItem("disabledNumbers", JSON.stringify(newAllDisabled));
-  //   localStorage.setItem("selectedNumbers", JSON.stringify(newAllSelected));
-
-  //   alert(`${numbersToReset.length} tickets have been reset and are now available!`);
-  // };
-
   const getAvailableNumbers = () => {
     return Array.from({ length: 60 }, (_, i) => i + 1);
   };
@@ -218,7 +178,7 @@ const PlayingTex = () => {
                   className="position-relative"
                   style={{
                     minWidth: '120px',
-                    // width: '100px'
+                    
                   }}
                 >Add Tickets
                 </Button>
@@ -227,8 +187,8 @@ const PlayingTex = () => {
                   onClick={() => handleShowTicket(movie.id)}
                   disabled={movieNumbers.length === 0}
                   className={`rounded-md transition-colors duration-300 text-center text-sm ${movieNumbers.length === 0
-                      ? 'bg-gray-300 cursor-not-allowed text-gray-500'
-                      : 'bg-red-600 hover:bg-red-700 text-white'
+                    ? 'bg-gray-300 cursor-not-allowed text-gray-500'
+                    : 'bg-red-600 hover:bg-red-700 text-white'
                     }`}
                 >
                   Show Tickets
@@ -242,7 +202,7 @@ const PlayingTex = () => {
           onHide={() => setShowSelector(false)}
           onSelect={handleNumberSelect}
           onDeleteTicket={handelDeleteTicket}
-          // onReset = {handleReset}
+         
           selectedNumbers={currentMovie ? selectedNumbers[currentMovie.id] || [] : []}
           availableNumbers={getAvailableNumbers()}
           disabledNumbers={currentMovie ? disabledNumbers[currentMovie.id] || [] : []}

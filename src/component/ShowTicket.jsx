@@ -25,7 +25,7 @@ const ShowTicket = ({ show, onHide, movie, numbers }) => {
           <div className="col-span-7 bg-gradient-to-br from-blue-100 to-blue-50 p-4">
             <div className="space-y-3 text-sm md:text-base">
               <div><span className="font-semibold">Passenger:</span> Moviegoer</div>
-              <div><span className="font-semibold">From:</span> {movie?.from || 'PVR Ahmedabad'}</div>
+              <div><span className="font-semibold">From:</span> {movie?.From || 'PVR Ahmedabad'}</div>
               <div><span className="font-semibold">To:</span> {movie?.title || 'Movie Title'}</div>
               <div><span className="font-semibold">Date:</span> {movie?.date || 'N/A'}</div>
               <div><span className="font-semibold">Time:</span> {movie?.time || '00:00'}</div>

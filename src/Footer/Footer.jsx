@@ -49,7 +49,7 @@ const Footer = () => {
                     </Col>
 
                     {/* Go Premium Column */}
-                    <Col md={1} className="mb-4">
+                    <Col md={2} className="mb-4 ">
                         <h5>Go Premium</h5>
                         <ul className="list-unstyled">
                             <li><a href="#" className="text-white-50">Plans</a></li>
