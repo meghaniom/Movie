@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Modal, Button, Badge } from 'react-bootstrap';
+import React, { useState, useEffect } from "react";
+import { Modal, Button, Badge } from "react-bootstrap";
 
 const NumberSelector = ({
   show,
@@ -8,7 +8,7 @@ const NumberSelector = ({
   onDeleteTicket,
   selectedNumbers = [],
   disabledNumbers = [],
-  movieId
+  movieId,
 }) => {
   const [tempSelected, setTempSelected] = useState(selectedNumbers);
   const [selectedSeatsToDelete, setSelectedSeatsToDelete] = useState([]);
@@ -17,18 +17,18 @@ const NumberSelector = ({
     if (show) {
       setTempSelected(selectedNumbers);
     }
-    
   }, [show, selectedNumbers, movieId]);
 
   const handleNumberClick = (number) => {
-    tempSelected?.includes(number)&&setSelectedSeatsToDelete([...selectedSeatsToDelete, number]);
-    // Prevent selection of disabled numbers 
+    tempSelected?.includes(number) &&
+      setSelectedSeatsToDelete([...selectedSeatsToDelete, number]);
+    // Prevent selection of disabled numbers
     if (disabledNumbers.includes(number)) return;
 
     // Toggle selection
-    setTempSelected(prev =>
+    setTempSelected((prev) =>
       prev.includes(number)
-        ? prev.filter(n => n !== number)
+        ? prev.filter((n) => n !== number)
         : [...prev, number]
     );
   };
@@ -38,9 +38,9 @@ const NumberSelector = ({
     onHide();
   };
   const handelDelete = () => {
-    console.log(selectedSeatsToDelete,"selectedSeatsToDelete");
-    console.log(tempSelected,"tempSelected");
-    
+    console.log(selectedSeatsToDelete, "selectedSeatsToDelete");
+    console.log(tempSelected, "tempSelected");
+
     if (selectedSeatsToDelete.length > 0) {
       onDeleteTicket(movieId, selectedSeatsToDelete);
       onHide();
@@ -62,12 +62,14 @@ const NumberSelector = ({
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(10, 1fr)',
-          gap: '8px',
-          padding: '10px'
-        }}>
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(10, 1fr)",
+            gap: "8px",
+            padding: "10px",
+          }}
+        >
           {Array.from({ length: 60 }, (_, i) => i + 1).map((number) => {
             const isDisabled = disabledNumbers.includes(number);
             const isSelected = tempSelected.includes(number);
@@ -76,26 +78,26 @@ const NumberSelector = ({
                 key={number}
                 onClick={() => handleNumberClick(number)}
                 style={{
-                  width: '40px',
-                  height: '40px',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  border: `1px solid ${isSelected ? '#007bff' : '#ddd'}`,
+                  width: "40px",
+                  height: "40px",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  border: `1px solid ${isSelected ? "#007bff" : "#ddd"}`,
                   backgroundColor: isDisabled
-                    ? '#e9ecef'
+                    ? "#e9ecef"
                     : isSelected
-                      ? '#007bff'
-                      : '#f8f9fa',
+                    ? "#007bff"
+                    : "#f8f9fa",
                   color: isDisabled
-                    ? '#adb5bd'
+                    ? "#adb5bd"
                     : isSelected
-                      ? 'white'
-                      : 'black',
-                  cursor: isDisabled ? 'not-allowed' : 'pointer',
-                  borderRadius: '4px',
-                  fontWeight: 'bold',
-                  transition: 'all 0.2s'
+                    ? "white"
+                    : "black",
+                  cursor: isDisabled ? "not-allowed" : "pointer",
+                  borderRadius: "4px",
+                  fontWeight: "bold",
+                  transition: "all 0.2s",
                 }}
               >
                 {number}
@@ -111,16 +113,20 @@ const NumberSelector = ({
         <Button variant="primary" onClick={handleConfirm}>
           Confirm
         </Button>
-     <Button variant="danger" onClick={handelDelete}
+        <Button
+          variant="danger"
+          onClick={handelDelete}
           style={{
-          backgroundColor: selectedSeatsToDelete.length > 0 ? '#dc3545' : '#f8f9fa',
-    color: selectedSeatsToDelete.length > 0 ? 'white' : 'gray',
-    border: '1px solid gray',
-    cursor: selectedSeatsToDelete.length > 0 ? 'pointer' : 'not-allowed'
-          }}>
+            backgroundColor:
+              selectedSeatsToDelete.length > 0 ? "#dc3545" : "#f8f9fa",
+            color: selectedSeatsToDelete.length > 0 ? "white" : "gray",
+            border: "1px solid gray",
+            cursor:
+              selectedSeatsToDelete.length > 0 ? "pointer" : "not-allowed",
+          }}
+        >
           Delete
         </Button>
-
       </Modal.Footer>
     </Modal>
   );

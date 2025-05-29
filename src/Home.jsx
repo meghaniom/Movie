@@ -1,17 +1,17 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
   const navigate = useNavigate();
-  const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+  const currentUser = JSON.parse(localStorage.getItem("currentUser"));
 
   const handleLogout = () => {
-    localStorage.removeItem('currentUser');
-    navigate('/movie');
+    localStorage.removeItem("currentUser");
+    navigate("/movie");
   };
 
   if (!currentUser) {
-    navigate('/movie');
+    navigate("/movie");
     return null;
   }
 

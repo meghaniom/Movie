@@ -21,6 +21,7 @@ function App() {
       <Route path = "/login" element = {<Login/>} />
      <Route path="/movie" element = {<Mainpart/>}/>
      
+     
     </Routes>
     </BrowserRouter>
 

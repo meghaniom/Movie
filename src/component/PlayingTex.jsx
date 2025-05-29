@@ -13,13 +13,10 @@ const PlayingTex = () => {
   const allSelectedNumbers = JSON.parse(localStorage.getItem("selectedNumbers")) || {};
   const allConfirmedTickets = JSON.parse(localStorage.getItem("confirmedTickets")) || {};
   const allDisabledNumbers = JSON.parse(localStorage.getItem("disabledNumbers")) || {};
-
   const [selectedNumbers, setSelectedNumbers] = useState(() => allSelectedNumbers[currentUser] || {});
   const [confirmedTickets, setConfirmedTickets] = useState(() => allConfirmedTickets[currentUser] || {});
   const [disabledNumbers, setDisabledNumbers] = useState(() => allDisabledNumbers || {});
-
   const [selectedMovieId, setSelectedMovieId] = useState(null);
-
   const [resetTicket, setResetTicket] = useState(false);
   const [modalShow, setModalShow] = useState(false);
 
@@ -130,7 +127,7 @@ const PlayingTex = () => {
     setConfirmedTickets(updatedConfirmed);
     setDisabledNumbers(updatedGlobalDisabled);
 
-    
+
     const newAllSelected = {
       ...allSelectedNumbers,
       [currentUser]: updatedSelected,
@@ -178,7 +175,7 @@ const PlayingTex = () => {
                   className="position-relative"
                   style={{
                     minWidth: '120px',
-                    
+
                   }}
                 >Add Tickets
                 </Button>
@@ -202,7 +199,7 @@ const PlayingTex = () => {
           onHide={() => setShowSelector(false)}
           onSelect={handleNumberSelect}
           onDeleteTicket={handelDeleteTicket}
-         
+
           selectedNumbers={currentMovie ? selectedNumbers[currentMovie.id] || [] : []}
           availableNumbers={getAvailableNumbers()}
           disabledNumbers={currentMovie ? disabledNumbers[currentMovie.id] || [] : []}
