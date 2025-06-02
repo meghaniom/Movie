@@ -159,3 +159,11 @@ section {
   font-size: 0.95em;
    text-align: left;
 }
+
+
+.image {
+  width: 100%;
+  display: block;
+  height: auto;
+  object-fit: cover;
+}

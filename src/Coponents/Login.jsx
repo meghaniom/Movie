@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import "../auth.css";
+import { motion } from "framer-motion";
 
 const Login = () => {
   const emailRef = useRef();
@@ -64,114 +65,112 @@ const Login = () => {
   };
 
   return (
-    <div
-      className="main-container"
-      style={{ position: "relative", width: "100%", height: "100vh" }}
-    >
-      <div
-        className="auth-container"
-        style={{
-          position: "absolute",
-          top: "50%",
-          left: "50%",
-          transform: "translate(-50%, -50%)",
-          minWidth: "400px",
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-purple-600 via-pink-500 to-red-400">
+      <motion.div
+        initial={{ y: -30 }}
+        animate={{ y: [-30, 0, 30, 0] }} // bounce-like effect
+        transition={{
+          duration: 4,
+          repeat: Infinity,
+          ease: "easeInOut",
         }}
+        className="w-full max-w-md p-8 rounded-2xl backdrop-blur-md bg-white/20 shadow-lg border border-white/30"
       >
-        <div className="flex flex-col  justify-center  p-8 bg-gray-50">
-          <h2 className="text-center text-4xl font-bold mb-8 animate-gradient bg-clip-text text-transparent bg-gradient-to-r from-pink-600 via-purple-500 to-pink-600 bg-[length:200%_auto] animate-pulse">
+        <h2 className="text-center text-4xl font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-yellow-300 via-pink-300 to-purple-400 animate-pulse">
+          Login
+        </h2>
+
+        {error && <div className="text-red-600 text-center mb-4">{error}</div>}
+        <form onSubmit={handleSubmit} className="space-y-6">
+          <div>
+            <label className="block text-white  text-lg  font-medium mb-1">
+              Email
+            </label>
+            <input
+              type="email"
+              ref={emailRef}
+              required
+              placeholder="Enter your email"
+              className="w-full p-3 rounded-lg bg-white/90 text-gray-800 focus:ring-2 focus:ring-pink-400 outline-none shadow-inner"
+            />
+          </div>
+
+          <label className="block text-white  text-lg font-medium mb-1">
+            Password
+          </label>
+
+          <div className="relative">
+            <input
+              type={showPassword ? "text" : "password"}
+              ref={passwordRef}
+              value={password}
+              onChange={handlePasswordChange}
+              required
+              minLength={8}
+              maxLength={16}
+              className="w-full p-3 rounded-lg bg-white/90 text-gray-800 focus:ring-2 focus:ring-purple-400 outline-none shadow-inner"
+              placeholder="Enter password"
+            />
+            <span
+              onClick={togglePasswordVisibility}
+              className="
+       absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-600 cursor-pointer
+             hover:text-gray-700
+           flex items-center h-full"
+            >
+              {showPassword ? <FaEyeSlash /> : <FaEye />}
+            </span>
+          </div>
+          {password && (
+            <div className="text-sm text-white space-y-1">
+              <p
+                className={
+                  validations.hasUpperCase ? "text-green-300" : "text-gray-300"
+                }
+              >
+                {validations.hasUpperCase ? "✓" : "•"}At least one uppercase
+                letter
+              </p>
+              <p
+                className={
+                  validations.hasLowerCase ? "text-green-300" : "text-gray-300"
+                }
+              >
+                {validations.hasLowerCase ? "✓" : "•"} At least one lowercase
+                letter
+              </p>
+
+              <p
+                className={
+                  validations.hasMinLength ? "text-green-300" : "text-gray-300"
+                }
+              >
+                {validations.hasMinLength ? "✓" : "•"}At least one number
+              </p>
+
+              <p
+                className={
+                  validations.hasSpecialChar
+                    ? "text-green-300"
+                    : "text-gray-300"
+                }
+              >
+                {validations.hasSpecialChar ? "✓" : "•"}Minimum 8 characters
+              </p>
+            </div>
+          )}
+
+          <button
+            type="submit"
+            className="w-full bg-gradient-to-r from-purple-700 via-pink-600 to-yellow-500 hover:opacity-90 text-white font-semibold py-3 rounded-lg transition duration-300 shadow-md"
+          >
             Login
-          </h2>
-
-          {error && <div className="error">{error}</div>}
-          <form onSubmit={handleSubmit}>
-            <div className="form-group">
-              <label className="mb-2 block">Email</label>
-              <input
-                type="email"
-                ref={emailRef}
-                required
-                placeholder="Enter your email"
-              />
-            </div>
-            <div className="w-full mb-3 relative">
-              <label className="mb-2 block">Password</label>
-              <div className="relative">
-                <input
-                  type={showPassword ? "text" : "password"}
-                  ref={passwordRef}
-                  value={password}
-                  onChange={handlePasswordChange}
-                  required
-                  minLength={8}
-                  maxLength={16}
-                  className="w-full pr-10 h-10 border border-gray-300 rounded-md px-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                  placeholder="Enter password"
-                />
-                <span
-                  onClick={togglePasswordVisibility}
-                  className="
-        absolute right-3 top-1/2 -translate-y-1/2
-        cursor-pointer text-gray-500 hover:text-gray-700
-        flex items-center h-full"
-                >
-                  {showPassword ? <FaEyeSlash /> : <FaEye />}
-                </span>
-              </div>
-              {password && (
-                <div className="text-sm text-gray-600 space-y-1">
-                  <p
-                    className={
-                      validations.hasUpperCase
-                        ? "text-green-600"
-                        : "text-gray-400"
-                    }
-                  >
-                    {validations.hasUpperCase ? "✓" : "•"}At least one uppercase
-                    letter
-                  </p>
-                  <p
-                    className={
-                      validations.hasLowerCase
-                        ? "text-green-500"
-                        : "text-gray-400"
-                    }
-                  >
-                    {validations.hasLowerCase ? "✓" : "•"} At least one
-                    lowercase letter
-                  </p>
-
-                  <p
-                    className={
-                      validations.hasMinLength
-                        ? "text-green-500"
-                        : "text-gray-400"
-                    }
-                  >
-                    {validations.hasMinLength ? "✓" : "•"}At least one number
-                  </p>
-
-                  <p
-                    className={
-                      validations.hasSpecialChar
-                        ? "text-green-500"
-                        : "text-gray-400"
-                    }
-                  >
-                    {validations.hasSpecialChar ? "✓" : "•"}Minimum 8 characters
-                  </p>
-                </div>
-              )}
-            </div>
-            <button type="submit" className="submit">
-              Login
-            </button>
-          </form>
-          <p className="text-center mt-4">
-            Don't have an account? <a href="/">Sign Up</a>
-          </p>
-        </div>
-      </div>
+          </button>
+        </form>
+        <p className="text-center mt-4 text-white ">
+          Don't have an account? <a href="/">Sign Up</a>
+        </p>
+      </motion.div>
     </div>
   );
 };

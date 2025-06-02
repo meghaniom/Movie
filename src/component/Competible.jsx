@@ -1,12 +1,70 @@
+import { div } from "framer-motion/client";
 import React from "react";
+import "../App.css";
 
 const Competible = () => {
   return (
-    <div
-      className="copetible"
-      style={{ width: "100%", clear: "both", display: "block" }}
-    >
-      <div className="container">
+    <>
+      <div
+        className="copetible"
+        style={{ width: "100%", clear: "both", display: "block" }}
+      >
+        <div className=" mx-auto py-10 ">
+          <div className="bg-gray-200 rounded-lg p-6 py-20">
+            <h2 className="text-3xl font-bold text-gray-800 mb-6 text-center">
+              Proud Partners with:
+            </h2>
+
+            <div className="flex flex-wrap justify-center gap-6 py-10">
+              <div className="w-24 h-24 flex items-center justify-center">
+                <img
+                  className="max-h-full bg-white max-w-full object-contain grayscale hover:grayscale-0 transition"
+                  src="https://www.plex.tv/wp-content/uploads/2021/11/Paramount-Black-500x500-1.png"
+                  alt="Paramount"
+                />
+              </div>
+              <div className="w-24 h-24 flex items-center justify-center">
+                <img
+                  className="max-h-full max-w-full object-contain grayscale hover:grayscale-0 transition"
+                  src="https://www.plex.tv/wp-content/uploads/2019/09/warner-bros.png"
+                  alt="Warner Bros"
+                />
+              </div>
+              <div className="w-24 h-24 flex items-center justify-center">
+                <img
+                  className="max-h-full max-w-full object-contain grayscale hover:grayscale-0 transition"
+                  src="https://www.plex.tv/wp-content/uploads/2019/11/metro-goldwyn-mayer.png"
+                  alt="MGM"
+                />
+              </div>
+              <div className="w-24 h-24 flex items-center justify-center">
+                <img
+                  className="max-h-full max-w-full object-contain grayscale hover:grayscale-0 transition"
+                  src="https://www.plex.tv/wp-content/uploads/2019/09/lionsgate.png"
+                  alt="Lionsgate"
+                />
+              </div>
+              <div className="w-24 h-24 flex items-center justify-center">
+                <img
+                  className="max-h-full max-w-full object-contain grayscale hover:grayscale-0 transition"
+                  src="https://www.plex.tv/wp-content/uploads/2019/11/legendary.png"
+                  alt="Legendary"
+                />
+                </div>
+                <div className="w-24 h-24 flex items-center justify-center">
+                  <img
+                    className="max-h-full max-w-full object-contain grayscale hover:grayscale-0 transition"
+                    src="https://www.plex.tv/wp-content/uploads/2020/03/magnolia.png"
+                    alt="Magnolia"
+                  />
+                </div>
+              
+            </div>
+          </div>
+
+        
+        </div>
+
         <div
           className="inner-copetible"
           style={{
@@ -74,7 +132,7 @@ const Competible = () => {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
