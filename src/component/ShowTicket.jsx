@@ -1,18 +1,25 @@
 // ShowTicket.jsx
-import React, { useState } from 'react';
-import Modal from 'react-bootstrap/Modal';
-import Button from 'react-bootstrap/Button';
-import QRScanner from './QRScanner';
-import '../index.css';
+import React, { useState } from "react";
+import Modal from "react-bootstrap/Modal";
+import Button from "react-bootstrap/Button";
+import QRScanner from "./QRScanner";
+import "../index.css";
 
 const ShowTicket = ({ show, onHide, movie, numbers }) => {
-  const [scanResultLeft, setScanResultLeft] = useState('');
-  const [scanResultRight, setScanResultRight] = useState('');
+  const [scanResultLeft, setScanResultLeft] = useState("");
+  const [scanResultRight, setScanResultRight] = useState("");
 
-  const seats = numbers?.length ? numbers.sort((a, b) => a - b).join(', ') : 'None';
+  const seats = numbers?.length
+    ? numbers.sort((a, b) => a - b).join(", ")
+    : "None";
 
   return (
-    <Modal show={show} onHide={onHide} centered dialogClassName="custom-modal-width">
+    <Modal
+      show={show}
+      onHide={onHide}
+      centered
+      dialogClassName="custom-modal-width"
+    >
       <div className="bg-white rounded-xl shadow-lg p-4 border border-blue-600 font-sans">
         {/* Header */}
         <div className="text-center text-2xl font-bold text-blue-700 mb-4">
@@ -24,13 +31,32 @@ const ShowTicket = ({ show, onHide, movie, numbers }) => {
           {/* Left side (Main Ticket) */}
           <div className="col-span-7 bg-gradient-to-br from-blue-100 to-blue-50 p-4">
             <div className="space-y-3 text-sm md:text-base">
-              <div><span className="font-semibold">Passenger:</span> Moviegoer</div>
-              <div><span className="font-semibold">From:</span> {movie?.From || 'PVR Ahmedabad'}</div>
-              <div><span className="font-semibold">To:</span> {movie?.title || 'Movie Title'}</div>
-              <div><span className="font-semibold">Date:</span> {movie?.date || 'N/A'}</div>
-              <div><span className="font-semibold">Time:</span> {movie?.time || '00:00'}</div>
-              <div><span className="font-semibold">Screen:</span> {movie?.screen || 'A1'}</div>
-              <div><span className="font-semibold">Seats:</span> {seats}</div>
+              <div>
+                <span className="font-semibold">Passenger:</span> Moviegoer
+              </div>
+              <div>
+                <span className="font-semibold">From:</span>{" "}
+                {movie?.From || "PVR Ahmedabad"}
+              </div>
+              <div>
+                <span className="font-semibold">To:</span>{" "}
+                {movie?.title || "Movie Title"}
+              </div>
+              <div>
+                <span className="font-semibold">Date:</span>{" "}
+                {movie?.date || "N/A"}
+              </div>
+              <div>
+                <span className="font-semibold">Time:</span>{" "}
+                {movie?.time || "00:00"}
+              </div>
+              <div>
+                <span className="font-semibold">Screen:</span>{" "}
+                {movie?.screen || "A1"}
+              </div>
+              <div>
+                <span className="font-semibold">Seats:</span> {seats}
+              </div>
             </div>
             <div className="mt-4 w-32 h-32 bg-gray-200 rounded-md overflow-hidden">
               <QRScanner
@@ -50,12 +76,29 @@ const ShowTicket = ({ show, onHide, movie, numbers }) => {
 
           {/* Right side (Stub) */}
           <div className="col-span-2 bg-white p-4 text-xs md:text-sm space-y-2 text-right">
-            <div><span className="font-semibold">Movie:</span> {movie?.title || 'Movie Title'}</div>
-            <div><span className="font-semibold">Date:</span> {movie?.date || 'N/A'}</div>
-            <div><span className="font-semibold">Time:</span> {movie?.time || '00:00'}</div>
-            <div><span className="font-semibold">Seats:</span> {seats}</div>
-            <div><span className="font-semibold">Gate:</span> {movie?.screen || 'A1'}</div>
-            <div><span className="font-semibold">TKT No:</span> TKT-{Math.floor(Math.random() * 999999)}</div>
+            <div>
+              <span className="font-semibold">Movie:</span>{" "}
+              {movie?.title || "Movie Title"}
+            </div>
+            <div>
+              <span className="font-semibold">Date:</span>{" "}
+              {movie?.date || "N/A"}
+            </div>
+            <div>
+              <span className="font-semibold">Time:</span>{" "}
+              {movie?.time || "00:00"}
+            </div>
+            <div>
+              <span className="font-semibold">Seats:</span> {seats}
+            </div>
+            <div>
+              <span className="font-semibold">Gate:</span>{" "}
+              {movie?.screen || "A1"}
+            </div>
+            <div>
+              <span className="font-semibold">TKT No:</span> TKT-
+              {Math.floor(Math.random() * 999999)}
+            </div>
             <div className="mt-4 w-24 h-24 bg-gray-200 rounded-md overflow-hidden mx-auto">
               <QRScanner
                 scannerId="right-scanner"
@@ -75,7 +118,9 @@ const ShowTicket = ({ show, onHide, movie, numbers }) => {
 
         {/* Footer */}
         <div className="text-center mt-4">
-          <Button variant="secondary" onClick={onHide}>Close</Button>
+          <Button variant="secondary" onClick={onHide}>
+            Close
+          </Button>
         </div>
       </div>
     </Modal>

@@ -15,3 +15,10 @@
 .custom-modal-width {
   max-width: 900px !important; /* or 1000px for extra width */
 }
+
+.custom-modal {
+  background: linear-gradient(135deg, #f0f4ff, #e0e7ff);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  padding: 20px;
+}

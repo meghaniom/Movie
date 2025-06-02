@@ -1,17 +1,17 @@
-import React, { useRef, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import '../auth.css'
+import "../auth.css";
 
 const Login = () => {
   const emailRef = useRef();
   const passwordRef = useRef();
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
 
   const togglePasswordVisibility = () => {
-    setShowPassword(prev => !prev);
+    setShowPassword((prev) => !prev);
   };
 
   const handleSubmit = (e) => {
@@ -20,58 +20,152 @@ const Login = () => {
     const password = passwordRef.current.value;
 
     // Get all users
-    const users = JSON.parse(localStorage.getItem('users')) || [];
-    const user = users.find(user => user.email === email);
+    const users = JSON.parse(localStorage.getItem("users")) || [];
+    const user = users.find((user) => user.email === email);
 
     if (!user) {
-      setError('User not found');
+      setError("User not found");
       return;
     }
 
     if (user.password !== password) {
-      setError('Incorrect password');
+      setError("Incorrect password");
       return;
     }
 
     // Set current user and redirect
-    localStorage.setItem('currentUser', JSON.stringify(user));
+    localStorage.setItem("currentUser", JSON.stringify(user));
     navigate("/movie");
   };
 
+  const [password, setPassword] = useState("");
+  const [showValidations, setShowValidations] = useState(false);
+
+  const validations = {
+    hasUpperCase: /[A-Z]/.test(password),
+    hasLowerCase: /[a-z]/.test(password),
+    hasNumber: /[0-9]/.test(password),
+    hasSpecialChar: /[!@#$%^&*(),.?":{}|<>]/.test(password),
+    hasMinLength: password.length >= 8,
+  };
+
+  const isPasswordValid = Object.values(validations).every(Boolean);
+
+  const handlePasswordChange = (e) => {
+    const value = e.target.value;
+    setPassword(value);
+
+    // Show validations only if password exists and isn't fully valid yet
+    setShowValidations(value.length > 0 && !isPasswordValid);
+  };
+
+  const toggleShowPassword = () => {
+    setShowPassword(!showPassword);
+  };
+
   return (
-    <div className='main-container' style={{ position: "relative", width: "100%", height: "100vh" }}>
-      <div className="auth-container" style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)", minWidth: "400px" }}>
-        <div className='flex flex-col  justify-center  p-8 bg-gray-50'>
-          <h2 className='text-center text-4xl font-bold mb-8 animate-gradient bg-clip-text text-transparent bg-gradient-to-r from-pink-600 via-purple-500 to-pink-600 bg-[length:200%_auto] animate-pulse'>Login</h2>
+    <div
+      className="main-container"
+      style={{ position: "relative", width: "100%", height: "100vh" }}
+    >
+      <div
+        className="auth-container"
+        style={{
+          position: "absolute",
+          top: "50%",
+          left: "50%",
+          transform: "translate(-50%, -50%)",
+          minWidth: "400px",
+        }}
+      >
+        <div className="flex flex-col  justify-center  p-8 bg-gray-50">
+          <h2 className="text-center text-4xl font-bold mb-8 animate-gradient bg-clip-text text-transparent bg-gradient-to-r from-pink-600 via-purple-500 to-pink-600 bg-[length:200%_auto] animate-pulse">
+            Login
+          </h2>
 
           {error && <div className="error">{error}</div>}
           <form onSubmit={handleSubmit}>
             <div className="form-group">
-              <label className='mb-2 block'>Email</label>
-              <input type="email" ref={emailRef} required />
+              <label className="mb-2 block">Email</label>
+              <input
+                type="email"
+                ref={emailRef}
+                required
+                placeholder="Enter your email"
+              />
             </div>
-            <div className="w-full mb-3 relative">  
-              <label className='mb-2 block'>Password</label>
-              <div className="relative">  
+            <div className="w-full mb-3 relative">
+              <label className="mb-2 block">Password</label>
+              <div className="relative">
                 <input
                   type={showPassword ? "text" : "password"}
                   ref={passwordRef}
+                  value={password}
+                  onChange={handlePasswordChange}
                   required
-                  minLength={6}
+                  minLength={8}
+                  maxLength={16}
                   className="w-full pr-10 h-10 border border-gray-300 rounded-md px-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  placeholder="Enter password"
                 />
                 <span
                   onClick={togglePasswordVisibility}
                   className="
         absolute right-3 top-1/2 -translate-y-1/2
         cursor-pointer text-gray-500 hover:text-gray-700
-        flex items-center h-full
-      "  >
+        flex items-center h-full"
+                >
                   {showPassword ? <FaEyeSlash /> : <FaEye />}
                 </span>
               </div>
+              {password && (
+                <div className="text-sm text-gray-600 space-y-1">
+                  <p
+                    className={
+                      validations.hasUpperCase
+                        ? "text-green-600"
+                        : "text-gray-400"
+                    }
+                  >
+                    {validations.hasUpperCase ? "✓" : "•"}At least one uppercase
+                    letter
+                  </p>
+                  <p
+                    className={
+                      validations.hasLowerCase
+                        ? "text-green-500"
+                        : "text-gray-400"
+                    }
+                  >
+                    {validations.hasLowerCase ? "✓" : "•"} At least one
+                    lowercase letter
+                  </p>
+
+                  <p
+                    className={
+                      validations.hasMinLength
+                        ? "text-green-500"
+                        : "text-gray-400"
+                    }
+                  >
+                    {validations.hasMinLength ? "✓" : "•"}At least one number
+                  </p>
+
+                  <p
+                    className={
+                      validations.hasSpecialChar
+                        ? "text-green-500"
+                        : "text-gray-400"
+                    }
+                  >
+                    {validations.hasSpecialChar ? "✓" : "•"}Minimum 8 characters
+                  </p>
+                </div>
+              )}
             </div>
-            <button type="submit" className='submit'>Login</button>
+            <button type="submit" className="submit">
+              Login
+            </button>
           </form>
           <p className="text-center mt-4">
             Don't have an account? <a href="/">Sign Up</a>
@@ -79,7 +173,6 @@ const Login = () => {
         </div>
       </div>
     </div>
-
   );
 };
 
