@@ -14,7 +14,6 @@ const Competible = () => {
             <h2 className="text-3xl font-bold text-gray-800 mb-6 text-center">
               Proud Partners with:
             </h2>
-
             <div className="flex flex-wrap justify-center gap-6 py-10">
               <div className="w-24 h-24 flex items-center justify-center">
                 <img
@@ -61,7 +60,6 @@ const Competible = () => {
             </div>
           </div>
         </div>
-
         <div
           className="inner-copetible"
           style={{

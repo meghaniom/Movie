@@ -12,7 +12,6 @@ const NumberSelector = ({
 }) => {
   const [tempSelected, setTempSelected] = useState(selectedNumbers);
   const [selectedSeatsToDelete, setSelectedSeatsToDelete] = useState([]);
-
   useEffect(() => {
     if (show) {
       setTempSelected(selectedNumbers);
@@ -48,7 +47,6 @@ const NumberSelector = ({
       alert("Please select at least one seat to delete.");
     }
   };
-
   return (
     <>
       <Modal
@@ -69,7 +67,6 @@ const NumberSelector = ({
             )}
           </Modal.Title>
         </Modal.Header>
-
         <Modal.Body className="text-center">
           <div style={{ display: "flex", gap: "12px", justifyContent:"center", alignItems: "center"}}>
             <div
