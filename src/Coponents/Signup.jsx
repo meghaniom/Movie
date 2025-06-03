@@ -141,7 +141,7 @@ const Signup = () => {
             </span>
           </div>
           {password && (
-            <div className="text-sm text-white space-y-1">
+            <div className="text-sm text-whi   te space-y-1">
               <p
                 className={
                   validations.hasUpperCase ? "text-green-300" : "text-gray-300"

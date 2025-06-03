@@ -50,19 +50,16 @@ const Competible = () => {
                   src="https://www.plex.tv/wp-content/uploads/2019/11/legendary.png"
                   alt="Legendary"
                 />
-                </div>
-                <div className="w-24 h-24 flex items-center justify-center">
-                  <img
-                    className="max-h-full max-w-full object-contain grayscale hover:grayscale-0 transition"
-                    src="https://www.plex.tv/wp-content/uploads/2020/03/magnolia.png"
-                    alt="Magnolia"
-                  />
-                </div>
-              
+              </div>
+              <div className="w-24 h-24 flex items-center justify-center">
+                <img
+                  className="max-h-full max-w-full object-contain grayscale hover:grayscale-0 transition"
+                  src="https://www.plex.tv/wp-content/uploads/2020/03/magnolia.png"
+                  alt="Magnolia"
+                />
+              </div>
             </div>
           </div>
-
-        
         </div>
 
         <div
