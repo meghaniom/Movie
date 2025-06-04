@@ -168,7 +168,7 @@ const Login = () => {
           </button>
         </form>
         <p className="text-center mt-4 text-white ">
-          Don't have an account? <a href="/">Sign Up</a>
+          Don't have an account? <a href="/" className="underline text-yellow-700 hover:text-white pl-1.5">Sign Up</a>
         </p>
       </motion.div>
     </div>

@@ -31,7 +31,6 @@ const NumberSelector = ({
         : [...prev, number]
     );
   };
-
   const handleConfirm = () => {
     onSelect(tempSelected);
     onHide();
@@ -68,7 +67,14 @@ const NumberSelector = ({
           </Modal.Title>
         </Modal.Header>
         <Modal.Body className="text-center">
-          <div style={{ display: "flex", gap: "12px", justifyContent:"center", alignItems: "center"}}>
+          <div
+            style={{
+              display: "flex",
+              gap: "12px",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
             <div
               style={{
                 display: "flex",
@@ -126,7 +132,6 @@ const NumberSelector = ({
             {Array.from({ length: 60 }, (_, i) => i + 1).map((number) => {
               const isDisabled = disabledNumbers.includes(number);
               const isSelected = tempSelected.includes(number);
-
               return (
                 <div
                   key={number}
@@ -155,9 +160,9 @@ const NumberSelector = ({
                     boxShadow: isSelected
                       ? "0 0 8px rgba(78, 84, 200, 0.5)"
                       : "0 2px 4px rgba(0, 0, 0, 0.05)",
-                        transition: "all 0.3s ease",
+                    transition: "all 0.3s ease",
                     cursor: isDisabled ? "not-allowed" : "pointer",
-                   fontWeight: 600,
+                    fontWeight: 600,
                     // fontSize: "14px",
                     // transition: "all 0.2s ease-in-out",
                     // userSelect: "none",
