@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { motion } from "framer-motion";
 import "../auth.css";
-
 const Signup = () => {
   const nameRef = useRef();
   const emailRef = useRef();
@@ -15,7 +14,6 @@ const Signup = () => {
   const togglePasswordVisibility = () => {
     setShowPassword((prev) => !prev);
   };
-
   const handleSubmit = (e) => {
     e.preventDefault();
     const name = nameRef.current.value.trim();
